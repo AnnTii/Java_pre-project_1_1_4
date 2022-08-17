@@ -12,6 +12,7 @@ public class Main {
 
 //        UserService userService = new UserServiceImpl();
 //
+//        userService.dropUsersTable();
 //        userService.createUsersTable();
 //
 //        userService.saveUser("Name1", "LastName1", (byte) 20);
@@ -22,11 +23,11 @@ public class Main {
 //        userService.getAllUsers();
 //        System.out.println(userService.getAllUsers());
 //        userService.cleanUsersTable();
-//        userService.dropUsersTable();
 
 
         UserDao userDao = new UserDaoHibernateImpl();
 
+        userDao.dropUsersTable();
         userDao.createUsersTable();
 
         userDao.saveUser("Name1", "LastName1", (byte) 20);
@@ -37,6 +38,5 @@ public class Main {
         userDao.removeUserById(1);
         userDao.getAllUsers();
         userDao.cleanUsersTable();
-        userDao.dropUsersTable();
     }
 }
