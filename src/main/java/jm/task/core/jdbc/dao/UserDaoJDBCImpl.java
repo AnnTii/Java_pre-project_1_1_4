@@ -20,10 +20,12 @@ public class UserDaoJDBCImpl implements UserDao {
             statement.execute("CREATE TABLE users(id INT AUTO_INCREMENT PRIMARY KEY,name CHAR(45),lastName CHAR(45), age INT)");
             connection.commit();
         } catch (SQLException e) {
-            try {
-                connection.rollback();
-            } catch (SQLException ex) {
-                ex.printStackTrace();
+            if (connection != null){
+                try {
+                    connection.rollback();
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                }
             }
             e.printStackTrace();
         }
@@ -34,10 +36,12 @@ public class UserDaoJDBCImpl implements UserDao {
             statement.execute("DROP TABLE users");
             connection.commit();
         } catch (SQLException e) {
-            try {
-                connection.rollback();
-            } catch (SQLException ex) {
-                ex.printStackTrace();
+            if (connection != null){
+                try {
+                    connection.rollback();
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                }
             }
             e.printStackTrace();
         }
@@ -51,10 +55,12 @@ public class UserDaoJDBCImpl implements UserDao {
             preparedStatement.executeUpdate();
             connection.commit();
         } catch (SQLException e) {
-            try {
-                connection.rollback();
-            } catch (SQLException ex) {
-                ex.printStackTrace();
+            if (connection != null){
+                try {
+                    connection.rollback();
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                }
             }
             e.printStackTrace();
         }
@@ -66,10 +72,12 @@ public class UserDaoJDBCImpl implements UserDao {
             preparedStatement.executeUpdate();
             connection.commit();
         } catch (SQLException e) {
-            try {
-                connection.rollback();
-            } catch (SQLException ex) {
-                ex.printStackTrace();
+            if (connection != null){
+                try {
+                    connection.rollback();
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                }
             }
             e.printStackTrace();
         }
@@ -89,10 +97,12 @@ public class UserDaoJDBCImpl implements UserDao {
                 connection.commit();
             }
         } catch (SQLException e) {
-            try {
-                connection.rollback();
-            } catch (SQLException ex) {
-                ex.printStackTrace();
+            if (connection != null){
+                try {
+                    connection.rollback();
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                }
             }
             e.printStackTrace();
         }
@@ -105,10 +115,12 @@ public class UserDaoJDBCImpl implements UserDao {
             statement.execute("TRUNCATE TABLE users");
             connection.commit();
         } catch (SQLException e) {
-            try {
-                connection.rollback();
-            } catch (SQLException ex) {
-                ex.printStackTrace();
+            if (connection != null){
+                try {
+                    connection.rollback();
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                }
             }
             e.printStackTrace();
         }
